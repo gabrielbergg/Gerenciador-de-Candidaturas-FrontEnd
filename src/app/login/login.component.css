@@ -1,0 +1,59 @@
+
+.matCardMain {
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    background-color: #14213d;
+    border-radius: 8px;
+}
+
+.login-form-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+mat-card {
+    padding: 30px;
+}
+
+mat-card mat-card-title {
+    padding-bottom: 20px;
+    font-size: 35px;
+    color: #fca311;
+    margin: 0px auto;
+}
+
+mat-card-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+mat-form-field {
+    width: 350px;
+}
+
+.button-flex-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.button-flex-container button {
+    width: 100px;
+    background-color: #ffffff;
+    padding: 12px;
+    color: #000000;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.button-flex-container button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
