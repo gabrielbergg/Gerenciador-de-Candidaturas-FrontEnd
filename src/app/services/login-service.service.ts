@@ -16,13 +16,13 @@ export class LoginService {
 
   constructor(private httpClient: HttpClient, private router: Router) {}
 
-  // Método para login
+  
   login(login: string, password: string) {
     return this.httpClient.post<LoginResponse>(this.apiUrl + '/login', { login, password }).pipe(
       tap((response) => {
-        sessionStorage.setItem('auth-token', response.password); // Apenas o token é armazenado
-        this.userRole.next(response.roles); // Armazena o papel em memória
-        this.redirectUser(response.roles); // Redireciona com base no papel do usuário
+        sessionStorage.setItem('auth-token', response.password); 
+        this.userRole.next(response.roles); 
+        this.redirectUser(response.roles); 
       })
     );
   }
@@ -34,15 +34,15 @@ export class LoginService {
       console.log("Admin");
     } else if (role === 'USER') {
       console.log("User");
-      this.router.navigate(['/home']);
+      this.router.navigate(['/homeUser']);
     } else {
       this.router.navigate(['/login']);
     }
   }
 
-  // Método para acessar o papel do usuário
+  
   getUserRole() {
-    return this.userRole.asObservable(); // Retorna o papel como um Observable
+    return this.userRole.asObservable(); 
   }
 
   signup(name: string, email: string, password: string){

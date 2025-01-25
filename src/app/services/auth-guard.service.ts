@@ -15,28 +15,23 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Observable<boolean> {
     return this.loginService.getUserRole().pipe(
-      take(1), // Obtém o valor atual do papel do usuário
+      take(1),
       map((role) => {
         if (role === 'ADMIN') {
           if (state.url.startsWith('/home')) {
-            // Permite acesso se a rota for a do admin
             return true;
           } else {
-            // Redireciona para a rota de admin se tentar acessar outra página
             this.router.navigate(['/home']);
             return false;
           }
         } else if (role === 'USER') {
           if (state.url.startsWith('/homeUser')) {
-            // Permite acesso se a rota for a do usuário
             return true;
           } else {
-            // Redireciona para a rota de usuário se tentar acessar outra página
             this.router.navigate(['/homeUser']);
             return false;
           }
         } else {
-          // Redireciona para o login caso o papel seja inválido
           this.router.navigate(['/login']);
           return false;
         }
