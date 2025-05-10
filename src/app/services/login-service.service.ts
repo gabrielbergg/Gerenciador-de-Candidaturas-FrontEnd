@@ -10,7 +10,7 @@ import { UserRole } from '../types/enum-response.type';
 })
 export class LoginService {
 
-  apiUrl: string = "http://localhost:8080/security";
+  apiUrl: string = "http://localhost:8081/security";
 
   private userRole = new BehaviorSubject<string | null>(null);
 
