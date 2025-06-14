@@ -9,7 +9,7 @@ const routes: Routes = [
   // {path: '', component: HomeComponent},
   { path: 'login', component: LoginComponent},
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-  {path: 'homeUser', component: HomeUserComponent, canActivate: [AuthGuard]}
+  {path: 'homeUser/:id', component: HomeUserComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

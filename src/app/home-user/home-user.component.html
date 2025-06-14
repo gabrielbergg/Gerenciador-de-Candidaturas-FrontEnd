@@ -11,14 +11,17 @@
 
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button mat-icon-button (click)="toggleMenu()">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>Meu App</span>
+      <div class="meuApp">
+        <button mat-icon-button (click)="toggleMenu()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span>Meu App</span>
+      </div>
+      <span> Bem vindo(a) {{ userName || '' }}</span>
     </mat-toolbar>
 
     <div class="conteudo-pagina">
-      <router-outlet></router-outlet>
+      <app-candidaturas [userId]="userId"></app-candidaturas>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

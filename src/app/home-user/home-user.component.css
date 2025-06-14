@@ -1,5 +1,15 @@
 
+.meuApp {
+  display: flex;
+  align-items: center;
+}
 
+mat-toolbar {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 2%;
+} 
 
 .layout-container {
   height: 100vh;

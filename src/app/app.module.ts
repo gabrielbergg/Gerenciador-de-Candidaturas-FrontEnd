@@ -13,13 +13,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HomeComponent } from './home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HomeUserComponent } from './home-user/home-user.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
+import { CandidaturasComponent } from './candidaturas/candidaturas.component';
+import { AuthInterceptor } from './services/auth.interceptor';
 
 
 
@@ -28,7 +30,8 @@ import { MatButtonModule } from '@angular/material/button';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    HomeUserComponent
+    HomeUserComponent,
+    CandidaturasComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatListModule,
     MatButtonModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 

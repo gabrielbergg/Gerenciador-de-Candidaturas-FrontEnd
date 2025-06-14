@@ -13,26 +13,20 @@ export class LoginComponent {
 
   constructor(private loginService: LoginService) {
     this.loginForm = new FormGroup({
-      username: new FormControl('', [Validators.required]),  
-      password: new FormControl('', [Validators.required, Validators.minLength(5)]) 
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required, Validators.minLength(5)])
     });
   }
 
   submit() {
     if (this.loginForm.valid) {
-      const { username, password } = this.loginForm.value;  
-  
+      const { username, password } = this.loginForm.value;
       this.loginService.login(username, password).subscribe({
-        next: () => {
-          console.log('Login realizado com sucesso!');
-        },
-        error: () => {
-          console.log('Erro ao realizar login');
-        }
+        next: () => {},
+        error: () => { console.log('Erro ao realizar login'); }
       });
     } else {
       console.log('Formulário inválido');
     }
   }
-  
 }
