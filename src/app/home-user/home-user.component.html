@@ -4,18 +4,18 @@
   <mat-sidenav #sidenav mode="side" [opened]="isMenuOpen">
     <mat-nav-list>
       <a mat-list-item routerLink="/homeUser">Menu inicial</a>
-      <a mat-list-item routerLink="/perfil">Candidaturas</a>
+      <a mat-list-item routerLink="/perfil">Adicionar Candidatura</a>
       <a mat-list-item routerLink="/login">Sair</a>
     </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar>
       <div class="meuApp">
         <button mat-icon-button (click)="toggleMenu()">
           <mat-icon>menu</mat-icon>
         </button>
-        <span>Meu App</span>
+        <span>Gerenciador de Candidaturas</span>
       </div>
       <span> Bem vindo(a) {{ userName || '' }}</span>
     </mat-toolbar>

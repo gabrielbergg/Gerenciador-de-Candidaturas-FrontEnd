@@ -9,6 +9,8 @@ mat-toolbar {
   justify-content: space-between; 
   align-items: center;
   padding: 0 2%;
+  background-color: #14213d;
+  color: #ffffff;
 } 
 
 .layout-container {
@@ -17,4 +19,14 @@ mat-toolbar {
 
 .conteudo-pagina {
   padding: 20px;
+  background-color: #E5E5E5;
 }
+
+mat-nav-list a {
+  transition: background-color 1s ease; 
+}
+
+mat-nav-list a:hover {
+  background-color: #fca211a8;
+}
+

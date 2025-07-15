@@ -1,29 +1,46 @@
-
-.matCardMain {
-    display: flex;
-    justify-content: center;
-    width: 500px;
-    height: 500px;
-    background-color: #14213d;
-    border-radius: 8px;
-}
-
 .login-form-flex {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 100vh;
+    background-image: url('/assets/images/fundoLogin.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.overlay-branca {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.692); /* branco com transparência */
+    z-index: 1;
+}
+
+.matCardMain {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    width: 500px;
+    height: 90%;
+    background-color: #14213d;
+    border-radius: 8px;
 }
 
 mat-card {
     padding: 30px;
 }
 
+mat-card-actions {
+    margin-top: 5%;
+}
+
 mat-card mat-card-title {
     padding-bottom: 20px;
     font-size: 35px;
-    color: #fca311 ;
-    margin: 0px auto;
+    color: #fca311;
+    margin: 5% auto;
 }
 
 mat-card-content {
@@ -34,6 +51,10 @@ mat-card-content {
 
 mat-form-field {
     width: 350px;
+}
+
+.full-width {
+    width: 100%;
 }
 
 .button-flex-container {
@@ -56,4 +77,18 @@ mat-form-field {
 .button-flex-container button:hover {
     transform: scale(1.1);
     cursor: pointer;
+}
+
+#esqueceuSenha {
+    display: flex;
+    align-items: flex-end;
+    width: 80%;
+    height: 25px;
+    color: #ffffffe0;
+    text-decoration: none;
+}
+
+#esqueceuSenha:hover {
+    color: #ffffff;
+    transition: 0.1s;
 }
