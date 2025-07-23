@@ -9,8 +9,8 @@
     <mat-card-content>
       <p><strong>Empresa:</strong> {{ candidatura.nomeEmpresa }}</p>
       <p><strong>Local:</strong> {{ candidatura.localCandidatura }}</p>
-      <p><strong>Status:</strong> {{ candidatura.statusCandidatura }}</p>
-      <p><strong>Data:</strong> {{ candidatura.dataCandidatura | date }}</p>
+      <p><strong>Status:</strong> {{ candidatura.statusCandidatura | statusFormat }}</p>
+      <p><strong>Data da candidatura:</strong> {{ candidatura.dataCandidatura | date: 'dd/MM/yyyy' }}</p>
     </mat-card-content>
 
     <mat-card-actions>

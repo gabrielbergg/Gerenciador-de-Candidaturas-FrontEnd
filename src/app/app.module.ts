@@ -22,6 +22,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
 import { CandidaturasComponent } from './candidaturas/candidaturas.component';
 import { AuthInterceptor } from './services/auth.interceptor';
+import { StatusFormatPipe } from './pipes/status-format.pipe';
 
 
 
@@ -31,7 +32,8 @@ import { AuthInterceptor } from './services/auth.interceptor';
     LoginComponent,
     HomeComponent,
     HomeUserComponent,
-    CandidaturasComponent
+    CandidaturasComponent,
+    StatusFormatPipe
   ],
   imports: [
     BrowserModule,
